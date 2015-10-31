@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet FreeHand *freeHandView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *choices;
 
 @end
 
@@ -54,6 +55,20 @@
     [self.freeHandView setNeedsDisplay];
     
 
+}
+- (IBAction)colorChoices:(id)sender {
+    if (_choices.selectedSegmentIndex == 0){
+        self.freeHandView.color = [UIColor blueColor];
+        
+    }else if (_choices.selectedSegmentIndex == 1){
+        self.freeHandView.color = [UIColor orangeColor];
+    }if (_choices.selectedSegmentIndex == 2){
+        self.freeHandView.color = [UIColor redColor];
+    }else if (_choices.selectedSegmentIndex == 3){
+        self.freeHandView.color = [UIColor purpleColor];
+    }else self.freeHandView.color = [UIColor whiteColor];
+    
+    [self.freeHandView setNeedsDisplay];
 }
 
 @end

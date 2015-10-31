@@ -19,15 +19,20 @@
     
     if (self) {
         self.path = [[UIBezierPath alloc] init];
+        self.color = [UIColor orangeColor];
     }
     
     return self;
 }
 
 - (void)drawRect:(CGRect)rect {
+    [self.path setLineWidth:5.0];
+//    self.path.color
     
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetStrokeColorWithColor(context, [UIColor orangeColor].CGColor);
     
-    [[UIColor orangeColor] setStroke];
+    [self.color setStroke];
     [self.path stroke];
 }
 

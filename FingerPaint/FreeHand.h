@@ -11,5 +11,6 @@
 @interface FreeHand : UIView
 
 @property (nonatomic, strong) UIBezierPath *path;
+@property (nonatomic, strong) UIColor *color;
 
 @end

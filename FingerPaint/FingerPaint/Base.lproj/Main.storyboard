@@ -14,28 +14,58 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-eT-SeW" customClass="FreeHand">
-                                <rect key="frame" x="42" y="28" width="516" height="545"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-eT-SeW" customClass="FreeHand">
+                                <rect key="frame" x="-51" y="28" width="516" height="545"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.56410085975599067" green="1" blue="0.90380551587336289" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="516" id="2PR-Ue-wl0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="641" id="hqu-Bx-ONy"/>
                                     <constraint firstAttribute="height" constant="545" id="wRn-Eg-jkc"/>
                                     <constraint firstAttribute="width" constant="516" id="x5l-TJ-nFB"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wRn-Eg-jkc"/>
+                                    </mask>
+                                </variation>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qKq-sU-P94">
+                                <rect key="frame" x="41" y="688" width="323" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="KUx-Qd-0Sx"/>
+                                    <constraint firstAttribute="width" constant="323" id="nR4-Gy-JoM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Blue"/>
+                                    <segment title="Orange"/>
+                                    <segment title="Red"/>
+                                    <segment title="Purple"/>
+                                    <segment title="Eraser"/>
+                                </segments>
+                                <connections>
+                                    <action selector="colorChoices:" destination="BYZ-38-t0r" eventType="valueChanged" id="NNl-1V-IFA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GRN-eT-SeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G3T-9r-zBJ"/>
                             <constraint firstItem="GRN-eT-SeW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="M4r-lc-zC9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qKq-sU-P94" secondAttribute="bottom" constant="20" id="rf1-zA-TdR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qKq-sU-P94" secondAttribute="bottom" constant="20" id="vOb-3x-eGh"/>
+                            <constraint firstItem="qKq-sU-P94" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wn2-lD-SSv"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="choices" destination="qKq-sU-P94" id="j0p-1Y-JmE"/>
                         <outlet property="freeHandView" destination="GRN-eT-SeW" id="BRv-NX-WD0"/>
                     </connections>
                 </viewController>
